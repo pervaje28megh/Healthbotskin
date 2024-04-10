@@ -2,12 +2,12 @@ import streamlit as st
 import subprocess
 
 # Function to install packages from requirements.txt file
-# def install_packages_from_requirements():
-#     st.write("Installing required packages...")
-#     subprocess.call(["pip", "install", "-r", "requirements.text"])
+def install_packages_from_requirements():
+    st.write("Installing required packages...")
+    subprocess.call(["pip", "install", "-r", "requirements.text"])
 
-# # Check and install required packages
-# install_packages_from_requirements()
+# Check and install required packages
+install_packages_from_requirements()
 
 # Now import the required libraries
 import pandas as pd
