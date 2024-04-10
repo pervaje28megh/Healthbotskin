@@ -21,7 +21,6 @@ def package_installed(package):
 # Function to install a package
 def install_package(package):
     st.write(f"Installing {package}...")
-    subprocess.check_call(["pip", "install", package])
 
 # Check and install required packages
 for package in required_packages:
