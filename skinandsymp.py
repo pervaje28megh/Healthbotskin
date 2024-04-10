@@ -1,4 +1,34 @@
 import streamlit as st
+import subprocess
+
+# List of required packages
+required_packages = [
+    "streamlit",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "tensorflow",
+    "torch",
+    "torchvision",
+    "PIL"
+    # Add any other required packages here
+]
+
+# Function to check if a package is installed
+def package_installed(package):
+    return subprocess.call(["pip", "show", package], stdout=subprocess.PIPE) == 0
+
+# Function to install a package
+def install_package(package):
+    st.write(f"Installing {package}...")
+    subprocess.check_call(["pip", "install", package])
+
+# Check and install required packages
+for package in required_packages:
+    if not package_installed(package):
+        install_package(package)
+
+# Now import the required libraries
 import pandas as pd
 import numpy as np
 import csv
